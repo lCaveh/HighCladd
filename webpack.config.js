@@ -9,7 +9,7 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     path: __dirname + '/dist',
-    publicPath: '/',
+    publicPath: prod ? '/HighCladd/' : '/',
   },
   module: {
     rules: [
