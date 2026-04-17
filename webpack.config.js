@@ -15,19 +15,22 @@ module.exports = {
     rules: [
       {
         test: /\.(ts|tsx)$/,
-        exclude: /node modules/,
+        exclude: [/node_modules/, /\.test\.(ts|tsx)$/],
         resolve: {
           extensions: ['.ts', '.tsx', '.js', '.json'],
         },
-        use: 'ts-loader',
+        use: {
+          loader: 'ts-loader',
+          options: { transpileOnly: true },
+        },
       },
       {
         test: /\.svg$/,
-        use: ['svgr/webpack', 'url-loader'],
+        type: 'asset/resource',
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-Loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
     ],
   },
@@ -49,7 +52,7 @@ module.exports = {
     liveReload: true,
     compress: true,
     port: 3000,
-    https: true,
+    server: 'https',
     historyApiFallback: true,
     host: 'localhost',
     client: {
