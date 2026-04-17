@@ -2,6 +2,7 @@ const prod = process.env.NODE_ENV === 'production';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
@@ -36,6 +37,9 @@ module.exports = {
   },
   devtool: prod ? undefined : 'source-map',
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.PUBLIC_URL': JSON.stringify(prod ? '/HighCladd' : ''),
+    }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),

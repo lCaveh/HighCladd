@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '../Common/Button';
 import { ResponsiveImage } from '../Common/ResponsiveImage';
+import { asset } from '../../utils/asset';
 import { CONTACT_PILLS, CTA_BUTTONS } from './HeroBanner.types';
 import type { ContactPillProps } from './HeroBanner.types';
 
@@ -19,8 +20,8 @@ const HeroBanner = (): React.ReactElement => (
 
     <div className="absolute inset-0">
       <ResponsiveImage
-        src="/assets/images/image1.jpeg"
-        srcSm="/assets/images/image1_sm.jpeg"
+        src={asset('/assets/images/image1.jpeg')}
+        srcSm={asset('/assets/images/image1_sm.jpeg')}
         alt="HighCladd exterior siding project"
         loading="eager"
         className="w-full h-full object-cover"

@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { SectionHeader } from '../Common/SectionHeader';
 import { ResponsiveImage } from '../Common/ResponsiveImage';
+import { asset } from '../../utils/asset';
 import { IMAGES } from './Gallery.types';
 import type { GalleryCarouselProps, GalleryItemProps, GalleryProps } from './Gallery.types';
 

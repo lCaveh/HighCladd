@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '../Common/Button';
 import { ResponsiveImage } from '../Common/ResponsiveImage';
+import { asset } from '../../utils/asset';
 import { FEATURES } from './About.types';
 import type { FeatureItem } from './About.types';
 
@@ -24,8 +25,8 @@ const About = (): React.ReactElement => (
         <div className="relative">
           <div className="rounded-2xl overflow-hidden shadow-2xl">
             <ResponsiveImage
-              src="/assets/images/image8.jpeg"
-              srcSm="/assets/images/image8_sm.jpeg"
+              src={asset('/assets/images/image8.jpeg')}
+              srcSm={asset('/assets/images/image8_sm.jpeg')}
               alt="HighCladd installation team"
               className="w-full h-80 sm:h-[480px] object-cover"
             />

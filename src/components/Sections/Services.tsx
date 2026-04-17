@@ -1,6 +1,7 @@
 import React from 'react';
 import { SectionHeader } from '../Common/SectionHeader';
 import { ResponsiveImage } from '../Common/ResponsiveImage';
+import { asset } from '../../utils/asset';
 import { SERVICES, ADDITIONAL_SERVICES, THEME } from './Services.types';
 import type { ServiceItem } from './Services.types';
 
@@ -9,7 +10,7 @@ const ServiceCard = ({ image, imageSm, icon, badge, title, description, variant 
   return (
     <div className={`service-card rounded-2xl overflow-hidden transition-all duration-300 ${t.card}`}>
       <div className="aspect-video overflow-hidden">
-        <ResponsiveImage src={image} srcSm={imageSm} alt={title} className="gallery-img w-full h-full object-cover" />
+        <ResponsiveImage src={asset(image)} srcSm={asset(imageSm)} alt={title} className="gallery-img w-full h-full object-cover" />
       </div>
       <div className="p-6 sm:p-8">
         <div className="flex items-center gap-3 mb-3">
