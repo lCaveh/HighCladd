@@ -1,4 +1,5 @@
 const prod = process.env.NODE_ENV === 'production';
+const publicUrl = prod ? 'https://lCaveh.github.io/HighCladd' : '';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -11,6 +12,8 @@ module.exports = {
   output: {
     path: __dirname + '/dist',
     publicPath: prod ? '/HighCladd/' : '/',
+    filename: prod ? '[name].[contenthash].js' : '[name].js',
+    clean: true,
   },
   module: {
     rules: [
@@ -38,7 +41,7 @@ module.exports = {
   devtool: prod ? undefined : 'source-map',
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.PUBLIC_URL': JSON.stringify(prod ? '/HighCladd' : ''),
+      'process.env.PUBLIC_URL': JSON.stringify(publicUrl),
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',

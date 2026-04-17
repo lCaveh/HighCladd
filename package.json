@@ -4,6 +4,7 @@
   "description": "Marketing website for HighCladd — exterior siding design, manufacturing, and installation across Toronto and the GTA.",
   "license": "MIT",
   "private": true,
+  "homepage": "https://lCaveh.github.io/HighCladd",
   "scripts": {
     "start": "node scripts/start.js",
     "build": "NODE_ENV=production webpack",
