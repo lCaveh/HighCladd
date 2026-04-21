@@ -1,5 +1,4 @@
 const prod = process.env.NODE_ENV === 'production';
-const publicUrl = prod ? 'https://lCaveh.github.io/HighCladd' : '';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -11,7 +10,7 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     path: __dirname + '/dist',
-    publicPath: prod ? '/HighCladd/' : '/',
+    publicPath: '/',
     filename: prod ? '[name].[contenthash].js' : '[name].js',
     clean: true,
   },
@@ -41,14 +40,17 @@ module.exports = {
   devtool: prod ? undefined : 'source-map',
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.PUBLIC_URL': JSON.stringify(publicUrl),
+      'process.env.PUBLIC_URL': JSON.stringify(''),
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
     new MiniCssExtractPlugin(),
     new CopyPlugin({
-      patterns: [{ from: './public/assets', to: 'assets' }],
+      patterns: [
+        { from: './public/assets', to: 'assets' },
+        { from: './public/.htaccess', to: '.htaccess', toType: 'file' },
+      ],
     }),
   ],
   devServer: {
@@ -73,9 +75,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-        '@src': path.resolve(__dirname, 'src'),
-        '@components': path.resolve(__dirname, 'src/components'),
-        '@redux': path.resolve(__dirname, 'src/redux')
+      '@src': path.resolve(__dirname, 'src'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@redux': path.resolve(__dirname, 'src/redux'),
     },
   },
 };
