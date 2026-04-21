@@ -6,5 +6,6 @@ export interface ContactInfoItemProps {
   hoverBg?: string;
   label: string;
   value: string;
+  subValue?: string;
   external?: boolean;
 }

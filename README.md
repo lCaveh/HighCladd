@@ -80,7 +80,7 @@ Each component has a co-located `.types.ts` file containing its TypeScript inter
 ## Contact
 
 **HighCladd Siding**  
-Phone: 437-661-1916  
-Email: salemiafsh@gmail.com  
+Phone: 437-559-0139 / 437-661-1916  
+Email: info@highcladd.ca  
 Instagram: @highcladd  
 Service area: Toronto & Greater Toronto Area

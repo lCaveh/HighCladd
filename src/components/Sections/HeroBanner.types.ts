@@ -15,8 +15,9 @@ export interface CtaButton {
 }
 
 export const CONTACT_PILLS: ContactPillProps[] = [
+  { href: 'tel:4375590139',                  icon: 'bi bi-telephone-fill', iconColor: 'text-blue-300', label: '437-559-0139' },
   { href: 'tel:4376611916',                  icon: 'bi bi-telephone-fill', iconColor: 'text-blue-300', label: '437-661-1916' },
-  { href: 'mailto:salemiafsh@gmail.com',     icon: 'bi bi-envelope-fill',  iconColor: 'text-blue-300', label: 'salemiafsh@gmail.com' },
+  { href: 'mailto:info@highcladd.ca',        icon: 'bi bi-envelope-fill',  iconColor: 'text-blue-300', label: 'info@highcladd.ca' },
   { href: 'https://instagram.com/highcladd', icon: 'bi bi-instagram',      iconColor: 'text-pink-300', label: '@highcladd', external: true },
 ];
 

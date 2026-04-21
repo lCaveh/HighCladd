@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from '../Common/Button';
-import { ResponsiveImage } from '../Common/ResponsiveImage';
 import { asset } from '../../utils/asset';
 import { CONTACT_PILLS, CTA_BUTTONS } from './HeroBanner.types';
 import type { ContactPillProps } from './HeroBanner.types';
@@ -19,13 +18,16 @@ const HeroBanner = (): React.ReactElement => (
   <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
 
     <div className="absolute inset-0">
-      <ResponsiveImage
-        src={asset('/assets/images/image1.jpeg')}
-        srcSm={asset('/assets/images/image1_sm.jpeg')}
-        alt="HighCladd exterior siding project"
-        loading="eager"
-        className="w-full h-full object-cover"
-      />
+      <picture>
+        <source media="(max-width: 639px)" srcSet={asset('/assets/images/image_hero_mobile_sm.jpeg')} />
+        <source media="(max-width: 767px)" srcSet={asset('/assets/images/image_hero_mobile.jpeg')} />
+        <img
+          src={asset('/assets/images/image1.jpeg')}
+          alt="HighCladd exterior siding project"
+          loading="eager"
+          className="w-full h-full object-cover"
+        />
+      </picture>
       <div className="hero-overlay absolute inset-0" />
     </div>
 

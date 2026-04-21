@@ -9,6 +9,7 @@ const ContactInfoItem = ({
   hoverBg = '',
   label,
   value,
+  subValue,
   external = false,
 }: ContactInfoItemProps): React.ReactElement => {
   const content = (
@@ -19,6 +20,7 @@ const ContactInfoItem = ({
       <div>
         <p className="text-white/50 text-xs uppercase tracking-wider">{label}</p>
         <p className="text-white font-semibold">{value}</p>
+        {subValue && <p className="text-white/60 text-sm">{subValue}</p>}
       </div>
     </>
   );

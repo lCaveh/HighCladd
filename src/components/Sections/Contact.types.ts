@@ -33,6 +33,7 @@ export interface ContactInfoEntry {
   hoverBg: string;
   label: string;
   value: string;
+  subValue?: string;
   external?: boolean;
 }
 
@@ -55,8 +56,8 @@ export const SERVICE_OPTIONS: ContactOption[] = [
 ];
 
 export const CONTACT_INFO: ContactInfoEntry[] = [
-  { href: 'tel:4376611916',                  iconClass: 'bi bi-telephone-fill', iconColor: 'text-blue-300', bgColor: 'bg-blue-500/20', hoverBg: 'group-hover:bg-blue-500/40', label: 'Phone',        value: '437-661-1916' },
-  { href: 'mailto:salemiafsh@gmail.com',     iconClass: 'bi bi-envelope-fill',  iconColor: 'text-blue-300', bgColor: 'bg-blue-500/20', hoverBg: 'group-hover:bg-blue-500/40', label: 'Email',        value: 'salemiafsh@gmail.com' },
+  { href: 'tel:4375590139',                  iconClass: 'bi bi-telephone-fill', iconColor: 'text-blue-300', bgColor: 'bg-blue-500/20', hoverBg: 'group-hover:bg-blue-500/40', label: 'Phone',        value: '437-559-0139', subValue: '437-661-1916' },
+  { href: 'mailto:info@highcladd.ca',        iconClass: 'bi bi-envelope-fill',  iconColor: 'text-blue-300', bgColor: 'bg-blue-500/20', hoverBg: 'group-hover:bg-blue-500/40', label: 'Email',        value: 'info@highcladd.ca' },
   { href: 'https://instagram.com/highcladd', iconClass: 'bi bi-instagram',      iconColor: 'text-pink-300', bgColor: 'bg-pink-500/20', hoverBg: 'group-hover:bg-pink-500/40', label: 'Instagram',    value: '@highcladd', external: true },
   {                                           iconClass: 'bi bi-geo-alt-fill',   iconColor: 'text-blue-300', bgColor: 'bg-blue-500/20', hoverBg: '',                           label: 'Service Area', value: 'Toronto & Greater Toronto Area' },
 ];
